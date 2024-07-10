@@ -577,15 +577,19 @@ export class DragResizeBlock extends Component {
       let valueToBeAdded = RFValue(20) * difference - roundedValue/2 ;
       this.state.x = this.state.x + valueToBeAdded ;
       this.state.w = this.state.w - valueToBeAdded;
-    }  
-    let xRightvalue = this.state.w / RFValue(20);
-    roundedValue =Math.round(xRightvalue);
-    difference = roundedValue - xRightvalue;
-    if(Math.abs(difference) != 0){
-      let valueToBeAdded = RFValue(20) * difference - roundedValue/2 ;
-      this.state.w= this.state.w + valueToBeAdded;
     }
-    
+    // let xRightvalue = this.state.w / RFValue(20);
+    // roundedValue =Math.round(xRightvalue);
+    // difference = roundedValue - xRightvalue;
+    // if(Math.abs(difference) != 0){
+    //   let valueToBeAdded = RFValue(20) * difference - roundedValue/2 ;
+    //   this.state.w= this.state.w + valueToBeAdded;
+    // }
+    // console.log("after ", this.state.x, this.state.w)
+
+    let xRightvalue = Math.round(this.state.w / RFValue(20));
+    this.state.w = xRightvalue * RFValue(20);
+
 
     if (onResizeEnd !== null) {
       onResizeEnd([
