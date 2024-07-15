@@ -569,14 +569,14 @@ export class DragResizeBlock extends Component {
       };
     });
 
-    let xLeftvalue = this.state.x / RFValue(20);
-    let roundedValue =Math.round(xLeftvalue);
-    let difference = roundedValue - xLeftvalue;
+    //let xLeftvalue = this.state.x / RFValue(20);
+    //let roundedValue =Math.round(xLeftvalue);
+    //let difference = roundedValue - xLeftvalue;
    
-    if(Math.abs(difference) != 0){
-      let valueToBeAdded = RFValue(20) * difference - roundedValue/2 ;
-      this.state.x = this.state.x + valueToBeAdded ;
-      this.state.w = this.state.w - valueToBeAdded;
+    //if(Math.abs(difference) != 0){
+    //  let valueToBeAdded = RFValue(20) * difference - roundedValue/2 ;
+    //  this.state.x = this.state.x + valueToBeAdded ;
+    //  this.state.w = this.state.w - valueToBeAdded;
     }
     // let xRightvalue = this.state.w / RFValue(20);
     // roundedValue =Math.round(xRightvalue);
@@ -587,8 +587,8 @@ export class DragResizeBlock extends Component {
     // }
     // console.log("after ", this.state.x, this.state.w)
 
-    let xRightvalue = Math.round(this.state.w / RFValue(20));
-    this.state.w = xRightvalue * RFValue(20);
+    //let xRightvalue = Math.round(this.state.w / RFValue(20));
+    // this.state.w = xRightvalue * RFValue(20);
 
 
     if (onResizeEnd !== null) {
