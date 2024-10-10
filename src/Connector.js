@@ -108,7 +108,8 @@ export class Connector extends Component {
       <View
         style={{
           position: 'absolute',
-          left: x,
+          left: this.props.type == 'ml' ? x : null,
+          right: this.props.type == 'ml' ? null : 4,
           top: 26,
           width: RFPercentage(2),
           height: RFPercentage(4),
