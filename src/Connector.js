@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
 import {
+  Image,
   PanResponder,
   View,
 } from 'react-native';
 import PropTypes from 'prop-types';
+import { RFPercentage } from 'react-native-responsive-fontsize';
+import { arrowIcon } from 'react-native-drag-resize/src/assets/images';
 
 export const CONNECTOR_TOP_LEFT = 'tl';
 export const CONNECTOR_TOP_MIDDLE = 'tm';
@@ -22,6 +25,7 @@ export class Connector extends Component {
 
   constructor(props) {
     super(props);
+
 
     this.position = {
       x: 0,
@@ -105,15 +109,17 @@ export class Connector extends Component {
         style={{
           position: 'absolute',
           left: x,
-          top: y,
-          width: size,
-          height: size,
-          borderWidth: 2,
+          top: 26,
+          width: RFPercentage(2),
+          height: RFPercentage(4),
+          borderWidth: 0,
           borderColor: 'black',
-          backgroundColor: 'white'
         }}
         {...this._panResponder.panHandlers}
-      />
+        >
+          <Image style={{width: RFPercentage(2), height: RFPercentage(4), transform: this.props.type == 'ml' ? [{rotate: "180deg"}]: []}} source={arrowIcon} />
+        </View>
+      
     );
   }
 }
